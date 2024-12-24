@@ -2,7 +2,8 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        char[][] board=new char[3][3];
+        char[][] board=new char[3][3]; //intializing an array
+        //intially it should be empty
         for(int row=0;row<board.length;row++){
             for(int col=0;col<board.length;col++){
                board[row][col]=' ';
@@ -32,6 +33,7 @@ class Main {
         }
         } 
     }
+//displaying board
     static void displayBoard(char[][] board){
           for(int row=0;row<board.length;row++){
             for(int col=0;col<board.length;col++){
@@ -41,19 +43,23 @@ class Main {
         }
     }
     static boolean haveWon(char[][] board,char player){
+//check for row
         for(int row=0;row<board.length;row++){
             if(board[row][0]==player&& board[row][1]==player&& board[row][2]==player){
                 return true;
             }
         }
+//check for col
         for(int col=0;col<board.length;col++){
             if(board[0][col]==player&& board[1][col]==player&& board[2][col]==player){
                 return  true;
             }
         }
+//check for right diagonal
         if(board[0][0]==player&& board[1][0]==player&& board[2][0]==player){
                 return  true;
             }
+//check for left diagonal
         if(board[0][2]==player&& board[1][1]==player&& board[2][0]==player){
                 return  true;
             }
